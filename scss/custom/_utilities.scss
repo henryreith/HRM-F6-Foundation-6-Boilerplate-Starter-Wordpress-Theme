@@ -42,17 +42,6 @@ Type
 }
 .text-muted{
 	color: scale-color($body-font-color, $lightness: 35%);
-}
-.fa{
-	margin-right: rem-calc(6);
-}
-#headerwrap{
-	.fa{
-		margin-right: 0;
-	}
-	#nav-my-ac{
-		margin-right: rem-calc(10);
-	}
 } */
 /* List Layout */
 // Helper to center an inline-list
@@ -108,7 +97,10 @@ General Page Layout
 //// Sections
 // Top & Bottom Padding
 .xxl-section-padding{
-	padding: rem-calc(175 0);
+	padding: rem-calc(100 0);
+	@include breakpoint(medium) {
+		padding: rem-calc(175 0);
+	}
 }
 .large-section-padding{
 	padding: rem-calc(75 0);

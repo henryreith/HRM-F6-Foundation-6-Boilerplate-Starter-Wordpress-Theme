@@ -2,7 +2,7 @@
 
 <div id="content-wrap" class="row">
 
-	<div class="large-8 columns">
+	<div class="small-12 medium-offset-1 medium-10 large-offset-0 large-8 columns">
 		<div id="content" role="main">
 			<h1>Category: <?php echo single_cat_title(); ?></h1>
 			<hr>
@@ -10,7 +10,7 @@
 		</div><!-- /#content -->
 	</div>
 
-	<div class="large-4 columns" id="sidebar" role="navigation">
+	<div class="small-12 medium-offset-1 medium-10 large-offset-0 large-4 columns" id="sidebar" role="navigation">
 		<?php get_template_part('includes/sidebar'); ?>
 	</div>
 

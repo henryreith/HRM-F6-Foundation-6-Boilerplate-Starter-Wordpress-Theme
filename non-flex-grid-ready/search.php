@@ -2,13 +2,15 @@
 
 <div id="content-wrap" class="row">
 
-	<div class="small-12 medium-offset-1 medium-10 large-offset-0 large-8 columns">
+	<div class="large-8 columns">
 		<div id="content" role="main">
-			<?php get_template_part('includes/loops/content', get_post_format()); ?>
+			<h2><?php _e('Search Results for', 'hrm'); ?> &ldquo;<?php the_search_query(); ?>&rdquo;</h2>
+			<hr/>
+			<?php get_template_part('includes/loops/content', 'search'); ?>
 		</div><!-- /#content -->
 	</div>
 
-	<div class="small-12 medium-offset-1 medium-10 large-offset-0 large-4 columns" id="sidebar" role="navigation">
+	<div class="large-4 columns" id="sidebar" role="navigation">
 		<?php get_template_part('includes/sidebar'); ?>
 	</div>
 

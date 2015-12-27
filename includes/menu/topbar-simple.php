@@ -7,7 +7,7 @@
 
 <div class="top-bar" id="main-menu">
 	<div class="top-bar-left">
-		<ul class="dropdown menu" data-dropdown-menu>
+		<ul class="dropdown menu hide-for-small-only" data-dropdown-menu>
 			<li class="menu-text"><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a></li>
 		</ul>
 	</div>
