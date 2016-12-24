@@ -13,7 +13,7 @@ function hrm_enqueues() {
   wp_register_script('foundation-js', get_template_directory_uri() . '/js/foundation.min.js', false, null, true);
 	wp_enqueue_script('foundation-js');
 
-	wp_register_script('custom-js', get_template_directory_uri() . '/js/custom.js', false, null, true);
+	wp_register_script('custom-js', get_template_directory_uri() . '/js/custom.min.js', false, null, true);
 	wp_enqueue_script('custom-js');
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -24,18 +24,6 @@ add_action('wp_enqueue_scripts', 'hrm_enqueues', 100);
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); // Not sure we need them on our site yet, so no need to load another JS file. 
-
-// Init Foundation 6 Script
-function init_foundation6_script_footer(){ ?>
-<script>jQuery(function($) {$(document).foundation();});</script>
-<?php } 
-add_action('wp_footer', 'init_foundation6_script_footer',111);
-
-// Fitvids Script
-function add_fitvids_script_footer(){ ?>
-<script>jQuery(function($) {$(".row").fitVids();});</script>
-<?php } 
-add_action('wp_footer', 'add_fitvids_script_footer',112);
 
 // Modernizr Inilised Scripts (Mainly just to pollyfill Object-Fit)
 function modernizr_script_footer(){ ?>
