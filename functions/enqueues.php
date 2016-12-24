@@ -13,8 +13,13 @@ function hrm_enqueues() {
   wp_register_script('foundation-js', get_template_directory_uri() . '/js/foundation.min.js', false, null, true);
 	wp_enqueue_script('foundation-js');
 
+<<<<<<< HEAD
 	wp_register_script('custom-js', get_template_directory_uri() . '/js/custom.min.js', false, null, true);
 	wp_enqueue_script('custom-js');
+=======
+	wp_register_script('hrm-custom-js', get_template_directory_uri() . '/js/custom.min.js', false, null, true);
+	wp_enqueue_script('hrm-custom-js');
+>>>>>>> 859b27a8bec0231d13c2edcf8aba901d2844298e
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
