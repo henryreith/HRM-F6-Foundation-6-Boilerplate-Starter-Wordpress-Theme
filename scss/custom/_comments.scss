@@ -9,4 +9,13 @@
 ol.commentlist{
     margin: 0;
     list-style-type: none;
+    ul {
+    	list-style-type: none;
+	}
+	.children{
+		margin-left: 2rem;
+	}
+}
+.commentlist .depth-1{
+	margin-bottom: 2rem
 }

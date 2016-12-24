@@ -4,7 +4,7 @@ function hrm_enqueues() {
 	
 	wp_enqueue_script( 'jquery' );
 
-	wp_register_style('master-css', get_template_directory_uri() . '/css/master.css', false, '6.1.0', null);
+	wp_register_style('master-css', get_template_directory_uri() . '/css/master.css', false, '6.3.0', null);
 	wp_enqueue_style('master-css');
 
   wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr-custom.min.js', false, null, false);
