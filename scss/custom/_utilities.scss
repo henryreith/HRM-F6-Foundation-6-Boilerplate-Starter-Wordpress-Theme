@@ -9,12 +9,15 @@
 /*
 Transitions
 */
-.button{
+.button, .transition-default{
 	transition: all 0.3s;
 }
 .button-no-margin{
 	margin-bottom: 0;
 }
+.hrm-transform-scale:hover{
+  transform:scale(1.04);
+} 
 
 /*
 Remove Bullets From Forms
@@ -194,9 +197,12 @@ figure.hrm-aspectbox{
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
-	background: url("../img/logo.svg") no-repeat center center;
-	background-size: 25%;
+	// background: url("../img/logo.svg") no-repeat center center;
+	// background-size: 25%;
 } 
+.object-fit .allimg img.hrm-object-fit-cover{
+	object-fit: contain;
+}
 .no-object-fit .allimg img{
 	max-width: inherit;
 	height: inherit;
