@@ -1,17 +1,19 @@
-<?php get_template_part('includes/header'); ?>
+<?php get_template_part('components/header/header'); ?>
 
-<div id="content-wrap" class="row">
+<div id="content-wrap" class="grid-container grid-container-padded align-center">
+	<div class="grid-x grid-padding-x">
 
-	<div class="small-12 medium-offset-1 medium-10 large-offset-0 large-8 columns">
-		<div id="content" role="main">
-			<?php get_template_part('includes/loops/content', 'single'); ?>
-		</div><!-- /#content -->
-	</div>
+		<div class="small-12 medium-10 large-8 cell">
+			<div id="content" role="main">
+				<?php get_template_part('components/loops/content', 'single'); ?>
+			</div><!-- /#content -->
+		</div>
 
-	<div class="small-12 medium-offset-1 medium-10 large-offset-0 large-4 columns" id="sidebar" role="navigation">
-		<?php get_template_part('includes/sidebar'); ?>
-	</div>
+		<div class="small-12 medium-10 large-4 cell" id="sidebar" role="navigation">
+			<?php get_template_part('components/sidebar'); ?>
+		</div>
 
-</div><!-- /#content-wrap .row -->
+	</div><!-- /.grid-x .grid-padding-x -->
+</div><!-- /#content-wrap .grid-container grid-container-padded -->
 
-<?php get_template_part('includes/footer'); ?>
+<?php get_template_part('components/footer/footer'); ?>

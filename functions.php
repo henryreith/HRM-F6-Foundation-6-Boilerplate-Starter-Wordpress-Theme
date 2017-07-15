@@ -11,6 +11,8 @@ require_once locate_template('/functions/widgets.php');
 require_once locate_template('/functions/search.php');
 require_once locate_template('/functions/comments.php');
 
+require_once locate_template('/functions/lazyload.php');
+
 add_action('after_setup_theme', 'true_load_theme_textdomain');
 
 function true_load_theme_textdomain(){

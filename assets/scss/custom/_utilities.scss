@@ -1,0 +1,245 @@
+// Custom SASS For Foundation
+// http://henryreith.co
+// Licensed under MIT Open Source
+
+//
+// General Utilities Add-on
+//
+
+/*
+Transitions
+*/
+.button, .transition-default{
+	transition: all 0.3s;
+}
+.button-no-margin{
+	margin-bottom: 0;
+}
+.hrm-transform-scale:hover{
+  transform:scale(1.04);
+} 
+
+/*
+Remove Bullets From Forms
+*/
+form {
+	ul{
+		margin: 0;
+	}
+	li {
+		list-style-type: none; 
+		}
+}
+
+/*
+Type */
+// Make Base Font Size Smaller on Mobile
+@include breakpoint(small only) {
+	html{
+		font-size: 112.5%;
+	}
+}
+
+/* .text-muted{
+	color: scale-color($body-font-color, $lightness: 35%);
+} */
+.hrm-small{
+	font-size: 75%;
+}
+
+code{
+	word-break: break-all;
+}
+
+
+/* List Layout */
+// Helper to center an inline-list
+
+// Accordion
+ul.accordion{
+	margin: 0;
+}
+.accordion{
+	a {
+	text-decoration: none;
+	}
+}
+// Borders
+.hrm-border-top{
+	border-top: 1px solid $light-gray;
+}
+.hrm-border-bottom{
+	border-bottom: 1px solid $light-gray;
+}
+.hrm-border-all{
+	border: 1px solid $light-gray;
+}
+
+// Simple Box Shadow
+.simple-box-shadow-inset{
+	box-shadow: inset 0 rem-calc(3) rem-calc(8) 0 rgba(0,0,0,.1);
+}
+.simple-box-shadow-below{
+	box-shadow: 0 rem-calc(3) rem-calc(8) 0 rgba(0,0,0,.1);
+}
+
+
+/* 
+General Page Layout
+*/
+
+//// All Pages
+#content-wrap{
+	padding-top: rem-calc(34);
+}
+
+/// Simple Page 
+.page-template-page-simple #content{
+	// padding-top: 20px;
+	// padding-bottom: 20px;
+}
+
+/// Page - Header (Nav) area
+
+//// Elements
+
+// Full Width Element
+.hrm-display-block{
+	display:block;
+}
+.hrm-display-inline-block{
+	display: inline-block; 
+}
+
+//// Sections
+// Top & Bottom Padding
+.xxl-section-padding{
+	padding: rem-calc($global-font-size*5 0);
+	@include breakpoint(medium) {
+		padding: rem-calc($global-font-size*8 0);
+	}
+}
+.large-section-padding{
+	padding: rem-calc($global-font-size*4 0);
+}
+.standard-section-padding{
+	padding: rem-calc($global-font-size*3 0);
+}
+.small-section-padding{
+	padding: rem-calc($global-font-size*2 0);
+}
+.xs-section-padding{
+	padding: rem-calc($global-font-size 0);
+}
+
+// All around padding
+.s-section-padding-all{
+	padding: rem-calc($global-font-size);
+	@include breakpoint(medium) {
+		padding: rem-calc($global-font-size*2);
+	}
+}
+.xs-section-padding-all{
+	padding: rem-calc($global-font-size);
+}
+
+// Margins
+.s-section-margin-bottom{
+	margin-bottom: rem-calc($global-font-size*2);
+}
+.xs-section-margin-bottom{
+	margin-bottom: rem-calc($global-font-size);
+}
+.xxs-section-margin-bottom{
+	margin-bottom: rem-calc($global-font-size/2);
+}
+.no-margin-bottom{
+	margin-bottom: 0;
+}
+
+// Images
+figure{
+	margin: 0 !important;
+}
+.hrm-circle {
+	border-radius: 50%;
+}
+
+// Custom Aspect Rations
+.hrm-aspectbox{
+	position:  relative;
+	width: 100%;
+	overflow: hidden;
+}
+.hrm-aspectbox:before{
+	content: "";
+	display: block;
+	padding-top: 100%; /* initial ratio of 1:1*/
+}
+figure.hrm-aspectbox{
+	overflow:hidden;
+}
+.hrm-ratio-content{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+/* Other ratios */
+.hrm-ratio2_1:before{
+	padding-top: 50%;
+}
+.hrm-ratio1_2:before{
+	padding-top: 200%;
+}
+.hrm-ratio4_3:before{
+	padding-top: 75%;
+}
+.hrm-ratio16_9:before{
+	padding-top: 56.25%;
+}
+.hrm-ratio16_10:before{
+	padding-top: 62.5%;
+}
+// Images
+
+.object-fit .allimg img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+} 
+.object-fit .allimg img.hrm-object-fit{
+	object-fit: contain;
+}
+.no-object-fit .allimg img{
+	max-width: inherit;
+	height: inherit;
+} 
+
+/*! Lazy Load XT v1.0.6 2014-11-19
+ * http://ressio.github.io/lazy-load-xt
+ * (C) 2014 RESS.io
+ * Licensed under MIT */
+img.lazy {
+  display: none;
+}
+.lazy-hidden {
+    opacity: 0;
+}
+.lazy-loaded {
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+
+// Background Image Defaults
+.hrm-bg-image-default{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}

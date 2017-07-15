@@ -1,0 +1,31 @@
+// Normalize, Foundation, FontAwesome, Custom 
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+// Behold, here are all the Foundation components.
+// Import Settings First
+// @import 'foundation/util/util';
+@import 'custom/custom-settings'; 
+@import 'foundation/foundation'; 
+
+@include foundation-everything; 
+
+// Include Font Awesome components.
+@import "font-awesome/variables";
+@import "font-awesome/mixins";
+@import "font-awesome/path";
+@import "font-awesome/core";
+// @import "font-awesome/larger";
+// @import "font-awesome/fixed-width";
+// @import "font-awesome/list";
+// @import "font-awesome/bordered-pulled";
+// @import "font-awesome/animated";
+// @import "font-awesome/rotated-flipped";
+// @import "font-awesome/stacked";
+@import "font-awesome/icons";
+@import "custom/fa-icons";
+@import "font-awesome/screen-reader";
+// IMPORTANT No icons will be processes by default. Go to the sass/fontawesome/_icons.sass file and uncomment icons as needed
+
+// Behold, here are all the custom SASS for Foundation components.
+@import 'custom'; 

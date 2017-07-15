@@ -1,0 +1,26 @@
+// Custom SASS For Foundation
+// http://henryreith.co
+// Licensed under MIT Open Source
+
+@import 'foundation/util/util';
+
+/* =Custom Settings  
+-------------------------------------------------------------- */
+
+/* =Custom Foundation
+-------------------------------------------------------------- */
+$global-font-size: 125%;
+// $global-width: rem-calc(1200);
+$global-lineheight: 1.614;
+// $body-background: #fdfafa;
+// $body-font-family: 'Raleway', Helvetica, Roboto, Arial, sans-serif;
+// $header-font-family: 'Lato', sans-serif;
+
+/* =Custom Variables
+-------------------------------------------------------------- */
+// Colours
+$super-light-gray: #f3f3f3 !default;
+
+$light-black: #1f1e1e !default;
+
+$dark-black: #151313 !default;
