@@ -26,7 +26,7 @@ The Single Posts Loop
             <?php wp_link_pages(); ?>
         </section>
     </article>
-<?php comments_template('/includes/loops/comments.php'); ?>
+<?php comments_template('/components/loops/comments.php'); ?>
 <?php endwhile; ?>
 <?php else: ?>
 <?php wp_redirect(get_bloginfo('siteurl').'/404', 404); exit; ?>

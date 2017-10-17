@@ -1,3 +1,9 @@
-//@prepros-append custom/hrm-custom.js
-//@prepros-append custom/Headroom.js
+//@prepros-append custom/jquery.fitvids.js
+//@prepros-append custom/custom-theme.js
+//@prepros-append custom/fastclick.js
+//@prepros-append custom/lazyloadxt/jquery.lazyloadxt.extra.js
+//@prepros-append custom/lazyloadxt/jquery.lazyloadxt.blankimage.js
+//@prepros-append custom/lazyloadxt/jquery.lazyloadxt.widget.js
+//@prepros-append custom/lazyloadxt/jquery.lazyloadxt.srcset.js
+//@prepros-append custom/cookie-js/js.cookie.js
 //@prepros-append custom/hrm-init-code.js

@@ -57,9 +57,9 @@
     // https://github.com/zurb/foundation-sites/pull/10222 and
     // https://github.com/zurb/foundation-sites/pull/10164
     .grid-x {
-      $str: "> #{$-zf-size}-shrink, > #{$-zf-size}-full";
+      $str: "> .#{$-zf-size}-shrink, > .#{$-zf-size}-full";
       @for $i from 1 through $grid-columns {
-        $str: $str + ", > #{$-zf-size}-#{$i}"
+        $str: $str + ", > .#{$-zf-size}-#{$i}"
       }
       #{$str} {
         flex-basis: auto;
@@ -185,7 +185,7 @@
 @mixin xy-block-grid-classes($margin-grid: true, $padding-grid: true) {
   @if $padding-grid {
     @include -zf-each-breakpoint {
-      @for $i from 1 through $block-grid-max {
+      @for $i from 1 through $xy-block-grid-max {
         .#{$-zf-size}-up-#{$i} {
           @include xy-grid-layout($i, '.cell', false, $gutter-type: padding);
         }
@@ -195,7 +195,7 @@
 
   @if $margin-grid {
     @include -zf-each-breakpoint {
-      @for $i from 1 through $block-grid-max {
+      @for $i from 1 through $xy-block-grid-max {
         // This is purely for responsive gutters - the margin grid has to go back and adjust widths (or heights)
         // for prior breakpoints based on the responsive gutter.
         @if(type-of($grid-margin-gutters) == 'map' and map-has-key($grid-margin-gutters, $-zf-size)) {
@@ -208,7 +208,7 @@
           }
         }
       }
-      @for $i from 1 through $block-grid-max {
+      @for $i from 1 through $xy-block-grid-max {
         .grid-margin-x.#{$-zf-size}-up-#{$i} {
           @include xy-grid-layout($i, '.cell', false, $gutter-type: margin, $breakpoint: $-zf-size);
         }
@@ -219,16 +219,16 @@
 
 // Collapse classes
 @mixin xy-collapse-grid-classes($margin-grid: true, $padding-grid: true) {
-  @include -zf-each-breakpoint {
+  @each $bp in $breakpoint-classes {
     @if $margin-grid {
-      .#{$-zf-size}-margin-collapse {
-        @include xy-grid-collapse($gutter-type: margin);
+      .#{$bp}-margin-collapse {
+        @include xy-grid-collapse($gutter-type: margin, $min-breakpoint: $bp);
       }
     }
 
     @if $padding-grid {
-      .#{$-zf-size}-padding-collapse {
-        @include xy-grid-collapse($gutter-type: padding);
+      .#{$bp}-padding-collapse {
+        @include xy-grid-collapse($gutter-type: padding, $min-breakpoint: $bp);
       }
     }
   }
@@ -285,9 +285,9 @@
       // https://github.com/zurb/foundation-sites/issues/10244
       // https://github.com/zurb/foundation-sites/pull/10222 and
       // https://github.com/zurb/foundation-sites/pull/10164
-      $str: "> #{$-zf-size}-shrink, > #{$-zf-size}-full";
+      $str: "> .#{$-zf-size}-shrink, > .#{$-zf-size}-full";
       @for $i from 1 through $grid-columns {
-        $str: $str + ", > #{$-zf-size}-#{$i}"
+        $str: $str + ", > .#{$-zf-size}-#{$i}"
       }
       #{$str} {
         flex-basis: auto;
@@ -332,11 +332,12 @@
   }
 
   @if $margin-grid {
-    @include xy-margin-grid-classes(top bottom, true, '.grid-margin-y')
+    @include xy-margin-grid-classes(top bottom, true, '.grid-margin-y');
   }
+
 }
 
-@mixin xy-frame-grid-classes($vertical-grid: true) {
+@mixin xy-frame-grid-classes($vertical-grid: true, $margin-grid: true) {
   // Framed grid styles
   .grid-frame {
     @include xy-grid-frame;
@@ -384,7 +385,6 @@
   }
 
   @if $vertical-grid {
-
     .grid-y {
       &.grid-frame {
         width: auto;
@@ -407,6 +407,17 @@
         .grid-y.#{$-zf-size}-grid-frame {
           height: 100%; // Same as include with $nested, but with less css
         }
+      }
+    }
+  }
+  @if $margin-grid {
+    @include xy-margin-grid-classes(top bottom, true, '.grid-margin-y');
+    .grid-frame.grid-margin-y {
+      @include xy-grid-frame(true, false, $grid-margin-gutters, $include-base: false);
+    }
+    @include -zf-each-breakpoint(false) {
+      .grid-margin-y.#{$-zf-size}-grid-frame {
+        @include xy-grid-frame(true, false, $grid-margin-gutters, $-zf-size, false);
       }
     }
   }
@@ -460,6 +471,6 @@
   }
 
   @if ($frame-grid) {
-    @include xy-frame-grid-classes($vertical-grid)
+    @include xy-frame-grid-classes($vertical-grid, $margin-grid)
   }
 }

@@ -37,6 +37,7 @@ if (Foundation.MediaQuery.atLeast('xlarge')) {
 }); */
 
 // Set Up HeadRoom
+/* 
 (function() {
 	var header = new Headroom(document.querySelector("#site-nav-wrapper"), {
 		tolerance: 5,
@@ -49,50 +50,4 @@ if (Foundation.MediaQuery.atLeast('xlarge')) {
 	});
 	header.init();
 }());
-
-// Other Custom Script
-jQuery(function($) {
-	// Make Min Height For Nav Bar
-	/* START - Calc Size of Header */
-	$.fn.navHeightFunction = function(){ 
-		var divHeight = $('#site-header-inner-wrap').height();  
-		$('#site-header').css('min-height', divHeight+'px');
-	}
-	setTimeout(function() {
-		$.fn.navHeightFunction();
-	}, 3000);
-	/* $( window ).resize(function(){
-		$.fn.navHeightFunction();
-	}); */
-	$('#site-header-inner-wrap').on('resizeme.zf.trigger', (function(){
-		$.fn.navHeightFunction();
-		// console.log( "You just resized!" ); 
-	})
-	);
-	/* END - Calc Size of Header */
-
-	/* START - Scroll Events */
-	// Scroll Events
-	/* $('#headerScroll').on('scrollme.zf.trigger', (function(){
-		console.log( "You just scrolled Up!" ); 
-	})
-	);
-
-	// Thank - http://thecodeblock.com/detect-scroll-up-and-down-using-jquery/
-	$(function(){
-		 var lastScrollTop = 0, delta = 5;
-		 $(window).scroll(function(){
-			 var nowScrollTop = $(this).scrollTop();
-			 if(Math.abs(lastScrollTop - nowScrollTop) >= delta){
-			 if (nowScrollTop > lastScrollTop){
-			 // ACTION ON
-			 // SCROLLING DOWN 
-			 } else {
-			 	console.log( "You just scrolled Up!" );  
-			 }
-			 lastScrollTop = nowScrollTop;
-			 }
-		 });
- 	}); */
-});
-
+*/
